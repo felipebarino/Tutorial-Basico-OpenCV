@@ -62,9 +62,9 @@ image_noise = cv2.imread(path)
 # Filtro gaussiano
 blurred = cv2.GaussianBlur(image_noise, (5, 5), 0)
 
-img2show = np.hstack([image_noise, blurred])
+img2show = np.hstack([image, image_noise, blurred])
 
-windowName = "Comparacao"
+windowName = "Comparacao: original-com ruido-ruido + filtro"
 cv2.imshow(windowName, img2show)
 cv2.waitKey(0)
 cv2.destroyWindow(windowName)
