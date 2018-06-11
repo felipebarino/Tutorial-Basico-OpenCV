@@ -15,6 +15,7 @@ cv2.destroyWindow(windowName)
 
 # Converter para escala de cinza
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
 # Retirar ruídos
 blurred = cv2.GaussianBlur(gray, (11, 11), 0)
 windowName = "Blurred"
