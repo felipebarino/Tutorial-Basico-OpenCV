@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 # Nome do arquivo de imagem a ler e caminho dele, a partir do atual
-fileName = "trex.png"
+fileName = "wave.png"
 path = "Images/" + fileName
 
 # Carrega a imagem
@@ -51,3 +51,22 @@ windowName = "Bilateral"
 cv2.imshow(windowName, blurred)
 cv2.waitKey(0)
 cv2.destroyWindow(windowName)
+
+# Importa a mesma imagem com ruído
+fileName = "wave_noise.png"
+path = "Images/" + fileName
+
+# Carrega a imagem com ru´pido gaussiano
+image_noise = cv2.imread(path)
+
+# Filtro gaussiano
+blurred = cv2.GaussianBlur(image_noise, (5, 5), 0)
+
+img2show = np.hstack([image_noise, blurred])
+
+windowName = "Comparacao"
+cv2.imshow(windowName, img2show)
+cv2.waitKey(0)
+cv2.destroyWindow(windowName)
+
+
